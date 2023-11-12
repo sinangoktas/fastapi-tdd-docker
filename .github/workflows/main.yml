@@ -28,7 +28,7 @@ jobs:
             --cache-from ${{ env.IMAGE }}:latest \
             --tag ${{ env.IMAGE }}:latest \
             --file ./project/Dockerfile.prod \
-#            "./project"
+            "./project"
       - name: Push image
         run: |
           docker push ${{ env.IMAGE }}:latest
