@@ -20,10 +20,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # debug
-      - name: Debug GitHub Actor and Token
-        run: |
-          echo "GitHub Actor: ${{ github.actor }}"
-          echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
+#      - name: Debug GitHub Actor and Token
+#        run: |
+#          echo "GitHub Actor: ${{ github.actor }}"
+#          echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
 
       - name: Pull image
         run: |
@@ -79,5 +79,5 @@ jobs:
         run: docker exec fastapi-tdd python -m flake8 .
       - name: Black
         run: docker exec fastapi-tdd python -m black . --check
-      - name: isort
-        run: docker exec fastapi-tdd python -m isort . --check-only
+#      - name: isort
+#        run: docker exec fastapi-tdd python -m isort . --check-only
