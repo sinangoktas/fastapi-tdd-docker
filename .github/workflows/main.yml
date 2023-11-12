@@ -19,6 +19,12 @@ jobs:
         run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin ghcr.io
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # debug
+      - name: Debug GitHub Actor and Token
+        run: |
+          echo "GitHub Actor: ${{ github.actor }}"
+          echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
+
       - name: Pull image
         run: |
           docker pull ${{ env.IMAGE }}:latest || true
