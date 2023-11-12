@@ -31,7 +31,7 @@ jobs:
             "./project"
       - name: Push image
         run: |
-          docker push ${{ env.IMAGE }}:latest
+          docker push ${{ env.IMAGE }}:latest || true
 
   test:
     name: Test Docker Image
