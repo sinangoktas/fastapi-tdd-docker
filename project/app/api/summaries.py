@@ -44,6 +44,7 @@ async def delete_summary(id: int) -> SummaryResponseSchema:
 
     return summary
 
+
 @router.put("/{id}/", response_model=SummarySchema)
 async def update_summary(id: int, payload: SummaryUpdatePayloadSchema) -> SummarySchema:
     summary = await crud.put(id, payload)

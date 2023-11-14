@@ -130,6 +130,7 @@ def test_update_summary_invalid_json(test_app_with_db):
         ]
     }
 
+
 def test_update_summary_invalid_keys(test_app_with_db):
     response = test_app_with_db.post(
         "/summaries/", data=json.dumps({"url": "https://foo.bar"})
