@@ -1,5 +1,5 @@
-from app.models.pydantic import SummaryPayloadSchema
-from app.models.tortoise import TextSummary
+from ..models.pydantic import SummaryPayloadSchema
+from ..models.tortoise import TextSummary
 from typing import Union, List
 
 
