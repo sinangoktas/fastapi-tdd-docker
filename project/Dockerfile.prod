@@ -1,3 +1,6 @@
+# This file can be used as a template for running the app on a cloud provider
+# https://testdriven.io/courses/tdd-fastapi/deployment/
+
 # pull official base image
 FROM python:3.11.2-slim-buster
 
@@ -41,3 +44,13 @@ USER app
 
 # run gunicorn
 CMD gunicorn --bind 0.0.0.0:$PORT app.main:app -k uvicorn.workers.UvicornWorker
+
+# Why Gunicorn and Uvicorn? To get the best of concurrency and parallelism.
+# Gunicorn manages multiple, concurrent Uvicorn processes.
+
+# Delivery
+# https://testdriven.io/courses/tdd-fastapi/continuous-delivery/
+
+# Advanced CI
+# https://testdriven.io/courses/tdd-fastapi/advanced-ci/
+
