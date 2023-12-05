@@ -1,5 +1,4 @@
 import json
-import pdb
 
 import pytest
 from app.api import summaries
